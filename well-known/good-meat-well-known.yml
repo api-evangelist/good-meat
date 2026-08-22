@@ -1,0 +1,115 @@
+generated: '2026-08-22'
+method: probed
+source: https://www.goodmeat.co/.well-known/
+name: GOOD Meat Well-Known Documents
+description: >-
+  Recorded absence. Every RFC 8615 /.well-known/ path was probed anonymously across
+  every host GOOD Meat (Eat Just, Inc.) controls. Not one returned a document — all
+  four hosts answer 404 for every path. No WellKnown or SecurityTxt pointer is emitted
+  in apis.yml, because nothing is served. This file documents that the probe ran and
+  what it found, not a surface the provider publishes.
+hosts:
+- host: www.goodmeat.co
+  note: >-
+    Static Nuxt build served from Amazon S3 behind CloudFront (server: AmazonS3,
+    last-modified 2025-07-25). Marketing site for the cultivated-meat brand.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: goodmeat.co
+  note: Apex; serves the same static build as the www host.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.ju.st
+  note: >-
+    Parent company Eat Just, Inc. eatjust.com issues a 301 to https://www.ju.st/,
+    so the parent brand site was probed at its canonical host.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: assets.goodmeat.co
+  note: CDN asset host referenced by the marketing site's og:image.
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+x-contract-discovery:
+  checked: '2026-08-22'
+  result: no-published-contract
+  note: >-
+    STEP 0b run in full before concluding absence. REST OpenAPI paths (/openapi.json,
+    /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /docs, /redoc), a GraphQL
+    surface (/graphql), llms.txt, and both A2A agent-card paths were probed against every
+    host. All returned 404. api.goodmeat.co does not resolve (curl exit 6, no DNS record).
+    The GitHub org github.com/EatJust exists and is genuinely the company's (name
+    "Eat Just, Inc.", blog https://www.ju.st/, San Francisco) but publishes 0 public
+    repositories, so there is no .proto, no WSDL, and no spec there either. The full
+    sitemap (sitemap-us-en.xml.gz) enumerates only marketing, stories, news, careers
+    and legal pages — no developer, docs, or API path exists to gate.
+  hosts_probed:
+  - www.goodmeat.co
+  - goodmeat.co
+  - www.ju.st
+  - assets.goodmeat.co
+  - api.goodmeat.co
+  dns_failures:
+  - host: api.goodmeat.co
+    note: No DNS record; curl returned 000 (could not resolve host).

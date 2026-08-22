@@ -1,17 +1,36 @@
 aid: good-meat
 name: GOOD Meat
-description: 'GOOD Meat is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  GOOD Meat is the cultivated-meat division of Eat Just, Inc., a San Francisco food
+  technology company. It grows real chicken from animal cells in production
+  bioreactors rather than by raising and slaughtering birds, and it was the first
+  company in the world cleared to sell cultivated meat to consumers — approved in
+  Singapore in December 2020, then cleared by the U.S. FDA in March 2023 and granted
+  USDA label approval and grant of inspection in June 2023. Its products have been
+  served at 1880 and Huber's Butchery in Singapore and at José Andrés' China Chilcano
+  in Washington, D.C., and in May 2024 it became the first cultivated meat sold at
+  retail. GOOD Meat is a consumer packaged-food and foodservice brand: it sells meat,
+  not software. It operates no developer program, publishes no API, SDK, webhook or
+  machine-readable specification, and its parent's GitHub organization carries no
+  public repositories.
 url: https://raw.githubusercontent.com/api-evangelist/good-meat/refs/heads/main/apis.yml
+image: https://assets.goodmeat.co/cdn/f/168369/1920x1080/ce40305d2e/gm_logo4.png
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-pass-completed-no-api-surface
 specificationVersion: '0.20'
 created: '2026-08-22'
 modified: '2026-08-22'
 tags:
 - Company
+- Food and Beverage
+- Cultivated Meat
+- Agriculture Technology
+- Consumer Packaged Goods
+- Biotechnology
+- Food Technology
+- Sustainability
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +38,61 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/good-meat-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.goodmeat.co/
+- type: About
+  url: https://www.goodmeat.co/about
+- type: Contact
+  url: https://www.goodmeat.co/contact
+- type: Careers
+  url: https://www.goodmeat.co/careers
+- type: Blog
+  url: https://www.goodmeat.co/stories
+- type: Newsroom
+  url: https://www.goodmeat.co/newsroom
+- type: FAQ
+  url: https://www.goodmeat.co/faq
+- type: TermsOfService
+  url: https://www.goodmeat.co/terms
+- type: PrivacyPolicy
+  url: https://www.goodmeat.co/privacy
+- type: GitHubOrganization
+  url: https://github.com/EatJust
+- type: LinkedIn
+  url: https://www.linkedin.com/showcase/goodmeat/
+- type: ParentCompany
+  url: https://www.ju.st/
+x-enrichment:
+  date: '2026-08-22'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    GOOD Meat sells cultivated chicken as a physical food product through restaurants
+    and grocers; its entire published surface — enumerated from its own
+    sitemap-us-en.xml.gz — is marketing, stories, news, careers and legal pages, with
+    no developer, docs or API path anywhere, and parent Eat Just's GitHub organization
+    (github.com/EatJust) has zero public repositories.
+  evidence:
+  - url: https://www.goodmeat.co/
+    status: 200
+  - url: https://www.goodmeat.co/openapi.json
+    status: 404
+  - url: https://www.goodmeat.co/graphql
+    status: 404
+  - url: https://www.goodmeat.co/llms.txt
+    status: 404
+  - url: https://www.goodmeat.co/.well-known/agent-card.json
+    status: 404
+  - url: https://www.goodmeat.co/developers
+    status: 404
+  - url: https://www.ju.st/openapi.json
+    status: 404
+  - url: https://api.github.com/orgs/eatjust
+    status: 200
+  checked: '2026-08-22'
