@@ -14,6 +14,17 @@ description: >-
   machine-readable specification, and its parent's GitHub organization carries no
   public repositories.
 url: https://raw.githubusercontent.com/api-evangelist/good-meat/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://assets.goodmeat.co/cdn/f/168369/1920x1080/ce40305d2e/gm_logo4.png
 x-type: company
 x-source: harvest:secondary-market
